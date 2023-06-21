@@ -1,20 +1,14 @@
 import React from "react";
-import { Button,Row, Col } from "antd";
+import { Button, Row, Col } from "antd";
 import "../App.css";
-
-function TestButton({value, type}){
-    return(
+function TestButton({ value, onclick }) {
+    return (
         <>
-        <Row style={{ marginTop: "22px" }} >
-        <Col span={11} push={6}>
-        <Button type="primary" htmlType="submit" className="login-form-button" > {value}
-        </Button>
-        </Col>
-        </Row>
+            <Button type="primary" htmlType="submit" onClick={onclick} className="login-form-button" > {value}
+            </Button>
+
         </>
 
     );
-
-    
 }
 export default TestButton;
