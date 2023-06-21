@@ -8,7 +8,6 @@ margin-left: 25%;
 `;
 
 const Title = styled.h1`
-
 font-size: 30px;
 `;
 
@@ -60,10 +59,6 @@ function Register() {
   };
   console.log(obj);
   
-  
-
- 
-
   return (
     <Wrapper className="App">
       <Form onSubmit={submit} style={{ textAlign: "left", width: "800px" }}>
