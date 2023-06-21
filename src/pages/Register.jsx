@@ -45,19 +45,21 @@ const validator3 = {
 };
 
 function Register() {
-  debugger;
-  const [fname, setFirstName] = useState({});
-  const [lname,setLastname]= useState({});
+  
+  const [fname, setFirstName] = useState("");
+  const [lname,setLastname]= useState("");
+  const [email,setEmail]= useState("");
      const submit = (e) => {
     e.preventDefault();
     
   };
   let obj={
     fname:fname,
-    lname:lname
+    lname:lname,
+    email:email
   };
-  console.log(fname);
-  console.log(lname);
+  console.log(obj);
+  
   
 
  
@@ -81,7 +83,7 @@ function Register() {
           <Col span={5} push={5} offset={1}>
             <label style={{ fontWeight: "bold" }}>Last Name</label>
 
-            <Form.Item name="lname" rules={[validator.require]} hasFeedback>
+            <Form.Item name="lname" value={lname} rules={[validator.require]} hasFeedback>
               <Input  name="lname" onChange={(e)=> setLastname(e.target.value)} />
             </Form.Item>
           </Col>
@@ -89,8 +91,8 @@ function Register() {
         <Row>
           <Col span={11} push={6}>
             <label style={{ fontWeight: "bold" }}>Email</label>
-            <Form.Item name="email" rules={[validator1.require]} hasFeedback>
-              <Input  />
+            <Form.Item name="email" value={email} rules={[validator1.require]} hasFeedback>
+              <Input name="email" onChange={(e)=> setEmail(e.target.value)} />
             </Form.Item>
           </Col>
         </Row>

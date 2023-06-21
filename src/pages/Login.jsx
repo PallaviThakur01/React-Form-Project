@@ -4,6 +4,7 @@ import InputField from "../components/Input";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Wrappe = styled.div`
 margin-top: 180px;
@@ -25,7 +26,16 @@ function Login () {
   const goToregister = () => {
     navigate("/Register");
   };
+  const [email,setEmail]= useState("");
+  const submit = (e) => {
+ e.preventDefault();
+ 
+};
+let obj={
 
+ email:email
+};
+console.log(obj);
 
   return (
     <Wrappe className="App">
@@ -58,7 +68,7 @@ function Login () {
           name="email"
           rules={[{ required: true, message: "Please input your email!" }]}
         >
-          <InputField type="text" placeholder="Email" />
+          <InputField type="text" placeholder="Email" required   />
         </Form.Item>
 
         <Form.Item
